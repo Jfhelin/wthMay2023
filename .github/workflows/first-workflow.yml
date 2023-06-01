@@ -2,7 +2,12 @@ name: Manual trigger action
 
 on:
   workflow_dispatch:
-
+    inputs:
+      cowsay-text:
+        description: 'The text for the Cowsay action'
+        required: false
+        default: 'Copilot helped me with this!'
+        
 jobs:
   echo-steps:
     runs-on: ubuntu-latest
@@ -16,8 +21,9 @@ jobs:
   cowsay:
     runs-on: ubuntu-latest
     needs: echo-steps
+
     steps:
       - name: Cowsay
-        uses: mscoutermarsh/cowsays-action@v1
+        uses: actions/starter-workflows/cowsay@v1
         with:
-          text: "Copilot Chat helped me with this"
+          text: ${{ inputs.cowsay-text }}
