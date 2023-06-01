@@ -24,6 +24,6 @@ jobs:
 
     steps:
       - name: Cowsay
-        uses: actions/starter-workflows/cowsay@v1
+        uses: mscoutermarsh/cowsays-action@master
         with:
           text: ${{ inputs.cowsay-text }}
