@@ -18,6 +18,6 @@ jobs:
     needs: echo-steps
     steps:
       - name: Cowsay
-        uses: actions/starter-workflows/cowsay@v1
+        uses: mscoutermarsh/cowsays-action@v1
         with:
           text: "Copilot Chat helped me with this"
