@@ -1,0 +1,14 @@
+name: Manual trigger action
+
+on:
+  workflow_dispatch:
+
+jobs:
+  echo-steps:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Echo step 1
+        run: echo "This is step 1"
+
+      - name: Echo step 2
+        run: echo "This is step 2"
